@@ -49,7 +49,7 @@ class UnpaywallFromWalden(db.Model):
     first_oa_location = db.Column(db.JSON)
     oa_locations = db.Column(db.JSON)
     oa_locations_embargoed = db.Column(db.JSON)
-    updated = db.Column(db.DateTime)
+    updated = db.Column(db.Text)
     data_standard = db.Column(db.Integer)
     z_authors = db.Column(db.JSON)
 
@@ -79,7 +79,7 @@ class UnpaywallFromWalden(db.Model):
             'first_oa_location': self.first_oa_location,
             'oa_locations': self.oa_locations,
             'oa_locations_embargoed': self.oa_locations_embargoed,
-            'updated': self.updated.isoformat() if self.updated else None,
+            'updated': self.updated,
             'data_standard': self.data_standard,
             'z_authors': self.z_authors
         }
