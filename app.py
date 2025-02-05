@@ -49,7 +49,7 @@ class UnpaywallFromWalden(db.Model):
     first_oa_location = db.Column(db.JSON)
     oa_locations = db.Column(db.JSON)
     oa_locations_embargoed = db.Column(db.JSON)
-    updated = db.Column(db.DateTime, default=datetime.utcnow)
+    updated = db.Column(db.DateTime)
     data_standard = db.Column(db.Integer)
     z_authors = db.Column(db.JSON)
 
