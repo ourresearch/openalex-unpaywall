@@ -26,7 +26,7 @@ def get_unpaywall_record(doi):
 # models
 
 class UnpaywallFromWalden(db.Model):
-    __schema__ = 'unpaywall'
+    __table_args__ = {'schema': 'unpaywall'}
     __tablename__ = 'unpaywall_from_walden'
 
     doi = db.Column(db.String, primary_key=True)
