@@ -1,4 +1,5 @@
 import os
+import json
 
 from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
@@ -76,13 +77,13 @@ class UnpaywallFromWalden(db.Model):
             'is_oa': self.is_oa,
             'oa_status': self.oa_status,
             'has_repository_copy': self.has_repository_copy,
-            'best_oa_location': self.best_oa_location,
-            'first_oa_location': self.first_oa_location,
-            'oa_locations': self.oa_locations,
-            'oa_locations_embargoed': self.oa_locations_embargoed,
+            'best_oa_location': json.loads(self.best_oa_location),
+            'first_oa_location': json.loads(self.first_oa_location),
+            'oa_locations': json.loads(self.oa_locations),
+            'oa_locations_embargoed': json.loads(self.oa_locations_embargoed),
             'updated': self.updated,
             'data_standard': self.data_standard,
-            'z_authors': self.z_authors
+            'z_authors': json.loads(self.z_authors)
         }
 
 
