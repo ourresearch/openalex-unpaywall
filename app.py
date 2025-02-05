@@ -16,7 +16,7 @@ db = SQLAlchemy(app)
 
 # routes
 
-@app.route('/<path:doi>', methods=['GET'])
+@app.route('/unpaywall/<path:doi>', methods=['GET'])
 def get_unpaywall_record(doi):
     record = db.session.query(UnpaywallFromWalden).filter_by(doi=doi).one_or_none()
     if not record:
