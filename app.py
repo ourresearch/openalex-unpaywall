@@ -9,6 +9,7 @@ OPENALEX_DB = os.getenv('OPENALEX_DB')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = OPENALEX_DB
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.json.sort_keys = False
 
 db = SQLAlchemy(app)
 
