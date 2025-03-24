@@ -22,7 +22,7 @@ def get_unpaywall_record(doi):
             access_token=DATABRICKS_TOKEN,
     ) as connection:
         with connection.cursor() as cursor:
-            query = "SELECT json_response FROM openalex.unpaywall.unpaywall WHERE id = %s"
+            query = "SELECT json_response FROM openalex.unpaywall.unpaywall WHERE doi = %s"
             cursor.execute(query, (doi,))
             row = cursor.fetchone()
 
