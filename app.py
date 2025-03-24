@@ -10,8 +10,6 @@ DATABRICKS_HOST = os.getenv('DATABRICKS_HOST')
 DATABRICKS_HTTP_PATH = os.getenv('DATABRICKS_HTTP_PATH')
 DATABRICKS_TOKEN = os.getenv('DATABRICKS_TOKEN')
 
-app.json.sort_keys = False
-
 # routes
 
 @app.route('/unpaywall/<path:doi>', methods=['GET'])
